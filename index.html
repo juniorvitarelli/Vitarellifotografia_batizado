@@ -13,7 +13,7 @@
       --text:#e9eef6;
       --muted:#a9b3c3;
       --line:#1d2330;
-      --accent:#caa35a; /* dourado premium */
+      --accent:#caa35a;
       --accent2:#7dd3fc;
       --ok:#34d399;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
@@ -266,26 +266,6 @@
     li{ margin:8px 0; }
     .plan .cta{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
 
-    /* FAQ */
-    .faq{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    details{
-      border:1px solid rgba(29,35,48,.9);
-      border-radius: var(--radius);
-      background: rgba(15,18,23,.45);
-      padding:14px 16px;
-    }
-    summary{
-      cursor:pointer;
-      font-weight:800;
-      list-style:none;
-    }
-    summary::-webkit-details-marker{ display:none; }
-    details p{ margin:10px 0 0; color:var(--muted); font-size:13px; }
-
     /* Google Form iframe wrap */
     .form-wrap{
       border:1px solid rgba(29,35,48,.9);
@@ -389,6 +369,32 @@
       flex-wrap:wrap;
       margin-top:6px;
     }
+
+    /* ===== FAQ (novo) ===== */
+    .faq{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    details{
+      border:1px solid rgba(29,35,48,.9);
+      border-radius: var(--radius);
+      background: rgba(15,18,23,.45);
+      padding:14px 16px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{ margin:10px 0 0; color:var(--muted); font-size:13px; }
+    .faq-note{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .faq-note em{ color:var(--text); font-style:italic; }
 
     /* Footer */
     footer{
@@ -555,7 +561,6 @@
       <div class="about">
         <div class="about-photo card">
           <div class="about-photo-inner">
-            <!-- Troque por sua foto: assets/junior.jpg -->
             <img src="assets/junior.jpg" alt="Júnior Vitarelli — Vitarelli Fotografia" loading="lazy" />
           </div>
         </div>
@@ -607,7 +612,6 @@
       </div>
 
       <div class="gallery">
-        <!-- Troque os arquivos pelos seus (coloque em /assets) -->
         <div class="shot big span-8"><img src="assets/portfolio-01.jpg" alt="Batizado — momento principal" loading="lazy"></div>
         <div class="shot big span-4"><img src="assets/portfolio-02.jpg" alt="Batizado — detalhes" loading="lazy"></div>
         <div class="shot sm span-4"><img src="assets/portfolio-03.jpg" alt="Batizado — família" loading="lazy"></div>
@@ -681,35 +685,79 @@
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQ (novo, antes do orçamento) -->
   <section id="faq">
     <div class="wrap">
       <div class="section-title">
-        <h2>Perguntas frequentes</h2>
-        <p>Respostas objetivas. Sem enrolação.</p>
+        <h2>❓ FAQ — Vitarelli Fotografia</h2>
+        <p>As dúvidas mais comuns antes de reservar sua data — respostas diretas e transparentes.</p>
       </div>
 
       <div class="faq">
         <details>
-          <summary>Você fotografa sem atrapalhar a cerimônia?</summary>
-          <p>Sim. Meu foco é discrição. Eu me posiciono de forma estratégica e registro o essencial com respeito ao rito.</p>
+          <summary>1. Quanto tempo demora a entrega das fotos?</summary>
+          <p>
+            As imagens são entregues em até <strong>15 dias úteis</strong> após o evento, organizadas e tratadas com a identidade Vitarelli.
+            Você recebe um <strong>link privado</strong> para visualizar e baixar todas as fotos com comodidade, de qualquer dispositivo.
+          </p>
         </details>
 
         <details>
-          <summary>O que você costuma registrar?</summary>
-          <p>Rito principal (água/unção), pais e padrinhos, família, detalhes (vela, roupa, símbolos) e fotos de família após a cerimônia.</p>
+          <summary>2. O valor do pacote pode mudar?</summary>
+          <p>
+            Os pacotes têm <strong>preço base fixo</strong>, mas o valor final pode variar conforme o
+            <strong>deslocamento até o local do evento</strong>. Após me passar o endereço da cerimônia, te envio o orçamento exato, sem surpresas.
+          </p>
         </details>
 
         <details>
-          <summary>Você atende fora de Belo Vale?</summary>
-          <p>Sim. Atendo Belo Vale e região: Moeda, Piedade dos Gerais, Bonfim, Nova Lima (Jardim Canadá e Alphaville), Congonhas e Conselheiro Lafaiete.</p>
+          <summary>3. Como funciona o álbum encadernado?</summary>
+          <p>
+            O álbum é produzido com <strong>capa dura</strong>, papel fotográfico de alta qualidade e montagem profissional.
+            As fotos são selecionadas em conjunto com você — garantindo que as memórias mais importantes estejam preservadas em um material físico de valor.
+            <br><br>
+            📌 <em>Incluso nos pacotes Premium (24 fotos) e Completo (36 fotos).</em>
+          </p>
         </details>
 
         <details>
-          <summary>Como faço para solicitar orçamento?</summary>
-          <p>Escolha um pacote e preencha o formulário. Depois, confirme no WhatsApp com <strong>BATIZADO</strong> para eu saber que chegou seu pedido.</p>
+          <summary>4. E se o evento atrasar ou a cerimônia mudar de horário?</summary>
+          <p>
+            Faz parte. Eventos com crianças têm ritmo próprio — eu sei disso e já chego preparado.
+            <strong>Pequenos atrasos estão incluídos na cobertura</strong> sem custo adicional. Em casos de alterações maiores, alinhamos juntos antes do dia.
+          </p>
+        </details>
+
+        <details>
+          <summary>5. Você atende fora de Belo Vale?</summary>
+          <p>
+            Sim! Atendo <strong>Belo Vale e toda a região</strong>, incluindo cidades próximas.
+            O deslocamento é calculado de forma transparente e incluído no orçamento. Me informe o local e te passo tudo certinho.
+          </p>
+        </details>
+
+        <details>
+          <summary>6. Como faço para reservar minha data?</summary>
+          <p>
+            Simples: me chama no <strong>WhatsApp</strong>, me conta sobre o batizado e a data que você tem em mente.
+            A data só fica <strong>confirmada após o sinal</strong> — então quanto antes você entrar em contato, maior a chance de garantir a disponibilidade.
+            <br><br>
+            📅 <em>A agenda tem vagas limitadas por mês. Consulte sua data o quanto antes.</em>
+          </p>
+        </details>
+
+        <details>
+          <summary>7. Posso contratar apenas o registro digital, sem álbum?</summary>
+          <p>
+            Sim! O pacote <strong>Essencial</strong> é 100% digital — você recebe todas as fotos organizadas via link privado para download.
+            Os pacotes <strong>Premium</strong> e <strong>Completo</strong> incluem o álbum físico <strong>mais</strong> o link digital.
+          </p>
         </details>
       </div>
+
+      <p class="faq-note">
+        Dica: se você está pronto para reservar, role para o formulário e finalize o pedido. Depois, confirme no WhatsApp com <strong>BATIZADO</strong>.
+      </p>
     </div>
   </section>
 
@@ -817,7 +865,6 @@
     }
     window.selectPackage = selectPackage;
 
-    // Init
     (function init(){
       const saved = localStorage.getItem("vitarelli_pkg");
       applyPackage(saved || "Premium");
