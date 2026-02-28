@@ -197,30 +197,36 @@
     .feature h3{ margin:0 0 6px; font-size:16px; }
     .feature p{ margin:0; color:var(--muted); font-size:13px; }
 
-    /* Gallery placeholders */
+    /* Portfolio images grid */
     .gallery{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
       gap:10px;
     }
-    .ph{
+    .shot{
       border:1px solid rgba(29,35,48,.9);
       border-radius: 16px;
-      background:
-        linear-gradient(135deg, rgba(202,163,90,.12), rgba(125,211,252,.05)),
-        rgba(15,18,23,.55);
-      height: 160px;
       overflow:hidden;
+      background: rgba(15,18,23,.55);
       position:relative;
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
     }
-    .ph:after{
-      content:"Substitua por uma foto forte do batizado";
+    .shot img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      transform: scale(1.01);
+    }
+    .shot:after{
+      content:"";
       position:absolute;
-      inset:auto 12px 12px 12px;
-      color:rgba(233,238,246,.65);
-      font-size:12px;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.20));
+      pointer-events:none;
     }
-    .ph.big{ height: 240px; }
+    .shot.big{ height: 240px; }
+    .shot.sm{ height: 170px; }
     .span-6{ grid-column: span 6; }
     .span-4{ grid-column: span 4; }
     .span-8{ grid-column: span 8; }
@@ -293,6 +299,97 @@
       border:0;
     }
 
+    /* ===== Sobre o Fotógrafo ===== */
+    .about{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:16px;
+      align-items:start;
+    }
+    .about-photo{
+      overflow:hidden;
+    }
+    .about-photo-inner{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(29,35,48,.9);
+      background: rgba(15,18,23,.45);
+    }
+    .about-photo img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      aspect-ratio: 4 / 5;
+      filter: contrast(1.02) saturate(1.02);
+    }
+    .about-text{
+      padding:6px 2px;
+    }
+    .about-kicker{
+      color:var(--accent);
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .about-name{
+      margin:0 0 6px;
+      font-size:24px;
+      letter-spacing:-.01em;
+    }
+    .about-role{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .about-paragraph{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .quote{
+      margin:14px 0 14px;
+      padding:14px 16px;
+      border-left:3px solid rgba(202,163,90,.8);
+    }
+    .quote-text{
+      margin:0;
+      font-size:14px;
+      color:var(--text);
+      line-height:1.45;
+      font-weight:800;
+    }
+    .about-meta{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin:12px 0 14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .meta-item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:10px 12px;
+      border:1px solid rgba(29,35,48,.9);
+      border-radius:999px;
+      background: rgba(15,18,23,.55);
+    }
+    .meta-icon{
+      width:20px;
+      display:inline-flex;
+      justify-content:center;
+    }
+    .about-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:6px;
+    }
+
     /* Footer */
     footer{
       border-top:1px solid rgba(29,35,48,.9);
@@ -313,10 +410,12 @@
       .cols{ grid-template-columns:1fr; }
       .plans{ grid-template-columns:1fr; }
       .faq{ grid-template-columns:1fr; }
-      .ph{ height: 180px; }
-      .ph.big{ height: 220px; }
       .span-8,.span-6,.span-4,.span-12{ grid-column: span 12; }
+      .shot.big{ height: 220px; }
+      .shot.sm{ height: 190px; }
       .form-wrap iframe{ height: 980px; }
+      .about{ grid-template-columns:1fr; }
+      .about-photo img{ aspect-ratio: 16 / 10; }
     }
   </style>
 </head>
@@ -332,6 +431,7 @@
 
       <nav class="nav">
         <a href="#como-funciona">Como funciona</a>
+        <a href="#sobre">Sobre</a>
         <a href="#portfolio">Portfólio</a>
         <a href="#pacotes">Pacotes</a>
         <a href="#faq">FAQ</a>
@@ -444,20 +544,75 @@
     </div>
   </section>
 
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Sobre o fotógrafo</h2>
+        <p>Presença, discrição e um olhar treinado para guardar o que sua família vai querer rever no futuro.</p>
+      </div>
+
+      <div class="about">
+        <div class="about-photo card">
+          <div class="about-photo-inner">
+            <!-- Troque por sua foto: assets/junior.jpg -->
+            <img src="assets/junior.jpg" alt="Júnior Vitarelli — Vitarelli Fotografia" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="about-text">
+          <div class="about-kicker">Vitarelli Fotografia</div>
+          <h3 class="about-name">Júnior Vitarelli</h3>
+          <p class="about-role">Fotógrafo de momentos que não voltam</p>
+
+          <p class="about-paragraph">
+            Há mais de <strong>10 anos</strong> atrás de uma câmera, eu construí uma trajetória baseada em algo simples e raro:
+            <strong>estar presente de verdade</strong>.
+          </p>
+
+          <p class="about-paragraph">
+            São mais de <strong>100 casamentos</strong> e <strong>dezenas de batizados</strong> registrados — não como “serviço”,
+            mas como memórias entregues a famílias que valorizam cuidado, respeito e consistência.
+          </p>
+
+          <p class="about-paragraph">
+            Meu estilo é <strong>emocional e espontâneo</strong>. Sem pose forçada, sem cena montada.
+            O que você recebe são risadas reais, olhares de emoção e detalhes que passam rápido — com composição e luz no ponto.
+          </p>
+
+          <div class="quote card">
+            <p class="quote-text">“Eu não registro um evento. Eu preservo o que sua família vai querer rever daqui a 20 anos.”</p>
+          </div>
+
+          <div class="about-meta">
+            <div class="meta-item"><span class="meta-icon">📍</span><span><strong>Atendo Belo Vale e região</strong></span></div>
+            <div class="meta-item"><span class="meta-icon">📲</span><span><strong>Agenda com vagas limitadas</strong> — consulte sua data</span></div>
+          </div>
+
+          <div class="about-actions">
+            <a class="btn" href="#orcamento" onclick="selectPackage('Premium')">Pedir orçamento</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/vitarellifotografia" target="_blank" rel="noopener">Ver Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PORTFOLIO -->
   <section id="portfolio">
     <div class="wrap">
       <div class="section-title">
         <h2>Portfólio</h2>
-        <p>Troque esses blocos por suas melhores fotos (6 a 12). Priorize: água, detalhes, emoção e foto de família.</p>
+        <p>Coloque suas melhores fotos aqui. Ideal: 6 a 12 imagens com água, detalhes, emoção e família.</p>
       </div>
 
       <div class="gallery">
-        <div class="ph big span-8"></div>
-        <div class="ph big span-4"></div>
-        <div class="ph span-4"></div>
-        <div class="ph span-4"></div>
-        <div class="ph span-4"></div>
+        <!-- Troque os arquivos pelos seus (coloque em /assets) -->
+        <div class="shot big span-8"><img src="assets/portfolio-01.jpg" alt="Batizado — momento principal" loading="lazy"></div>
+        <div class="shot big span-4"><img src="assets/portfolio-02.jpg" alt="Batizado — detalhes" loading="lazy"></div>
+        <div class="shot sm span-4"><img src="assets/portfolio-03.jpg" alt="Batizado — família" loading="lazy"></div>
+        <div class="shot sm span-4"><img src="assets/portfolio-04.jpg" alt="Batizado — emoção" loading="lazy"></div>
+        <div class="shot sm span-4"><img src="assets/portfolio-05.jpg" alt="Batizado — retrato" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -558,7 +713,7 @@
     </div>
   </section>
 
-  <!-- ORÇAMENTO (GOOGLE FORMS PRÉ-PREENCHIDO) -->
+  <!-- ORÇAMENTO -->
   <section id="orcamento">
     <div class="wrap">
       <div class="section-title">
@@ -625,7 +780,6 @@
     const WHATSAPP_NUMBER = "5531988008600";
     const WA_TEXT = "BATIZADO\\n\\nOi, José! Quero orçamento para fotografia de batizado.";
     const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WA_TEXT)}`;
-
     ["ctaTop","ctaHero","ctaBottom"].forEach(id=>{
       const el = document.getElementById(id);
       if(el) el.href = WA_LINK;
@@ -657,7 +811,6 @@
       localStorage.setItem("vitarelli_pkg", finalPkg);
     }
 
-    // Exposto para os botões
     function selectPackage(pkg){
       applyPackage(pkg);
       document.getElementById("orcamento").scrollIntoView({ behavior: "smooth" });
