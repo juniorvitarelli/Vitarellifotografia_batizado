@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Fotógrafo de batizado premium em Belo Vale/MG e região. Discrição, segurança e sensibilidade. Orçamento no WhatsApp." />
+  <title>Vitarelli Fotografia | Fotógrafo de Batizado em Belo Vale/MG e Região</title>
+
+  <style>
+    :root{
+      --bg:#0b0d10;
+      --card:#0f1217;
+      --text:#e9eef6;
+      --muted:#a9b3c3;
+      --line:#1d2330;
+      --accent:#caa35a; /* dourado premium */
+      --accent2:#7dd3fc; /* detalhe frio */
+      --ok:#34d399;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 70% -10%, rgba(202,163,90,.18), transparent 60%),
+        radial-gradient(900px 600px at 10% 10%, rgba(125,211,252,.10), transparent 55%),
+        linear-gradient(180deg, #07080a, var(--bg) 18%, #07080a 120%);
+      line-height:1.5;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 20px; }
+
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,8,10,.65);
+      border-bottom:1px solid rgba(29,35,48,.7);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; flex-direction:column; gap:2px;
+    }
+    .brand strong{ letter-spacing:.12em; text-transform:uppercase; font-size:12px; color:var(--muted); }
+    .brand span{ font-weight:700; font-size:16px; }
+    .nav{
+      display:flex; gap:16px; align-items:center; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav a{
+      font-size:13px;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{ color:var(--text); border-color: rgba(202,163,90,.35); background:rgba(202,163,90,.06); }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid rgba(202,163,90,.45);
+      background: linear-gradient(180deg, rgba(202,163,90,.22), rgba(202,163,90,.08));
+      box-shadow: 0 10px 18px rgba(0,0,0,.25);
+      font-weight:700;
+      font-size:14px;
+      white-space:nowrap;
+    }
+    .btn:hover{ filter:brightness(1.08); }
+    .btn-secondary{
+      border-color: rgba(169,179,195,.35);
+      background: rgba(15,18,23,.5);
+      font-weight:600;
+      color:var(--muted);
+      box-shadow:none;
+    }
+
+    /* Hero */
+    .hero{
+      padding:56px 0 18px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:26px;
+      align-items:start;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(202,163,90,.35);
+      background: rgba(202,163,90,.08);
+      color:var(--muted);
+      font-size:13px;
+      width:fit-content;
+      margin-bottom:16px;
+    }
+    h1{
+      margin:0 0 12px;
+      font-size:42px;
+      line-height:1.08;
+      letter-spacing:-.02em;
+    }
+    .sub{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:16px;
+      max-width:58ch;
+    }
+    .hero-actions{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+      margin:10px 0 18px;
+    }
+    .mini{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:8px;
+    }
+    .proof{
+      display:flex; gap:14px; flex-wrap:wrap; margin-top:18px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .proof span{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 10px;
+      border:1px solid rgba(29,35,48,.9);
+      border-radius:999px;
+      background: rgba(15,18,23,.55);
+    }
+    .dot{ width:8px; height:8px; border-radius:50%; background:var(--ok); display:inline-block; }
+
+    /* Card */
+    .card{
+      border:1px solid rgba(29,35,48,.9);
+      background: rgba(15,18,23,.62);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-pad{ padding:18px; }
+    .card h3{ margin:0 0 6px; font-size:16px; }
+    .card p{ margin:0; color:var(--muted); font-size:13px; }
+
+    .form{
+      display:grid; gap:10px;
+      margin-top:12px;
+    }
+    label{ font-size:12px; color:var(--muted); }
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(29,35,48,.95);
+      background: rgba(7,8,10,.35);
+      color:var(--text);
+      outline:none;
+      font-size:14px;
+    }
+    input:focus, select:focus, textarea:focus{ border-color: rgba(202,163,90,.55); }
+    textarea{ min-height:90px; resize:vertical; }
+
+    .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .small{ font-size:12px; color:var(--muted); margin-top:8px; }
+
+    /* Sections */
+    section{ padding:44px 0; }
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
+      margin-bottom:18px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size:26px;
+      letter-spacing:-.01em;
+    }
+    .section-title p{
+      margin:0;
+      color:var(--muted);
+      max-width:60ch;
+      font-size:14px;
+    }
+
+    .cols{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .feature{
+      padding:18px;
+      border:1px solid rgba(29,35,48,.9);
+      border-radius: var(--radius);
+      background: rgba(15,18,23,.45);
+    }
+    .feature .kicker{
+      color:var(--accent);
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+      font-weight:700;
+    }
+    .feature h3{ margin:0 0 6px; font-size:16px; }
+    .feature p{ margin:0; color:var(--muted); font-size:13px; }
+
+    /* Gallery placeholders */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:10px;
+    }
+    .ph{
+      border:1px solid rgba(29,35,48,.9);
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(202,163,90,.12), rgba(125,211,252,.05)),
+        rgba(15,18,23,.55);
+      height: 160px;
+      overflow:hidden;
+      position:relative;
+    }
+    .ph:after{
+      content:"Substitua por uma foto forte do batizado";
+      position:absolute;
+      inset:auto 12px 12px 12px;
+      color:rgba(233,238,246,.65);
+      font-size:12px;
+    }
+    .ph.big{ height: 240px; }
+    .span-6{ grid-column: span 6; }
+    .span-4{ grid-column: span 4; }
+    .span-8{ grid-column: span 8; }
+    .span-12{ grid-column: span 12; }
+
+    /* Packages */
+    .plans{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .plan{
+      padding:18px;
+      border:1px solid rgba(29,35,48,.9);
+      border-radius: var(--radius);
+      background: rgba(15,18,23,.52);
+      position:relative;
+      overflow:hidden;
+    }
+    .plan.pop{
+      border-color: rgba(202,163,90,.55);
+      box-shadow: 0 18px 40px rgba(202,163,90,.10);
+    }
+    .tag{
+      position:absolute; top:14px; right:14px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      border:1px solid rgba(202,163,90,.55);
+      background: rgba(202,163,90,.12);
+      color:var(--text);
+      font-weight:700;
+    }
+    .plan h3{ margin:0 0 4px; font-size:18px; }
+    .plan .desc{ color:var(--muted); font-size:13px; margin:0 0 12px; }
+    ul{ margin:0; padding-left:18px; color:var(--muted); font-size:13px; }
+    li{ margin:8px 0; }
+    .plan .cta{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
+
+    /* FAQ */
+    .faq{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    details{
+      border:1px solid rgba(29,35,48,.9);
+      border-radius: var(--radius);
+      background: rgba(15,18,23,.45);
+      padding:14px 16px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:700;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{ margin:10px 0 0; color:var(--muted); font-size:13px; }
+
+    /* Footer */
+    footer{
+      border-top:1px solid rgba(29,35,48,.9);
+      padding:26px 0 40px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footer-grid{
+      display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+      align-items:center;
+    }
+    .footer-grid strong{ color:var(--text); }
+
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero-grid{ grid-template-columns:1fr; }
+      h1{ font-size:36px; }
+      .cols{ grid-template-columns:1fr; }
+      .plans{ grid-template-columns:1fr; }
+      .faq{ grid-template-columns:1fr; }
+      .grid-2{ grid-template-columns:1fr; }
+      .ph{ height: 180px; }
+      .ph.big{ height: 220px; }
+      .span-8,.span-6,.span-4,.span-12{ grid-column: span 12; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <strong>Vitarelli Fotografia</strong>
+        <span>José Vitarelli Júnior</span>
+      </div>
+
+      <nav class="nav">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#pacotes">Pacotes</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn" id="ctaTop" href="#" target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="badge">📍 Belo Vale/MG e região • Cobertura premium</div>
+
+        <h1>Batizado registrado com respeito, precisão e emoção.</h1>
+
+        <p class="sub">
+          Eu sou <strong>José Vitarelli Júnior</strong>, da <strong>Vitarelli Fotografia</strong>.
+          Registro batizados com discrição e olhar atento — sem interferir na cerimônia e sem perder o instante.
+          Atendo <strong>Belo Vale, Moeda, Piedade dos Gerais, Bonfim, Nova Lima (Jardim Canadá e Alphaville), Congonhas e Conselheiro Lafaiete</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" id="ctaHero" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          <a class="btn btn-secondary" href="https://www.instagram.com/vitarellifotografia" target="_blank" rel="noopener">Ver Instagram</a>
+        </div>
+
+        <div class="mini">Você vive o momento. Eu garanto o registro.</div>
+
+        <div class="proof" aria-label="provas e diferenciais">
+          <span><i class="dot"></i> Discrição durante o rito</span>
+          <span><i class="dot"></i> Fotos naturais e elegantes</span>
+          <span><i class="dot"></i> Entrega organizada</span>
+        </div>
+      </div>
+
+      <!-- LEAD CARD -->
+      <aside class="card">
+        <div class="card-pad">
+          <h3>Receba pacotes e datas disponíveis</h3>
+          <p>Preencha 3 informações e eu retorno com as opções ideais para o seu batizado.</p>
+
+          <form class="form" onsubmit="return sendWhatsAppLead(event)">
+            <div class="grid-2">
+              <div>
+                <label for="data">Data do batizado</label>
+                <input id="data" name="data" type="date" required />
+              </div>
+              <div>
+                <label for="cidade">Cidade</label>
+                <select id="cidade" name="cidade" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option>Belo Vale</option>
+                  <option>Moeda</option>
+                  <option>Piedade dos Gerais</option>
+                  <option>Bonfim</option>
+                  <option>Nova Lima (Jardim Canadá)</option>
+                  <option>Nova Lima (Alphaville)</option>
+                  <option>Congonhas</option>
+                  <option>Conselheiro Lafaiete</option>
+                  <option>Outra (me diga no campo abaixo)</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="igreja">Igreja / Local (opcional, mas ajuda)</label>
+              <input id="igreja" name="igreja" type="text" placeholder="Ex.: Matriz de..." />
+            </div>
+
+            <div>
+              <label for="msg">Mensagem (opcional)</label>
+              <textarea id="msg" name="msg" placeholder="Ex.: batizado + fotos com família / padrinhos, etc."></textarea>
+            </div>
+
+            <button class="btn" type="submit">Enviar no WhatsApp</button>
+            <div class="small">Ao enviar, você abre uma conversa no WhatsApp com a palavra <strong>BATIZADO</strong> e seus dados.</div>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- WHY -->
+  <section>
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Por que contratar um fotógrafo para o batizado?</h2>
+        <p>
+          Batizado é rápido e não tem “refazer”. O registro premium é sobre antecipar o instante,
+          respeitar o ambiente e entregar imagens com consistência.
+        </p>
+      </div>
+
+      <div class="cols">
+        <div class="feature">
+          <div class="kicker">Discrição</div>
+          <h3>Presença leve, resultado forte</h3>
+          <p>Eu fotografo sem interromper o rito. A cerimônia segue natural — e você recebe um registro completo.</p>
+        </div>
+
+        <div class="feature">
+          <div class="kicker">Precisão</div>
+          <h3>Luz de igreja + timing</h3>
+          <p>Momento certo, ângulo certo, luz no ponto. O essencial acontece em segundos — e eu estou pronto.</p>
+        </div>
+
+        <div class="feature">
+          <div class="kicker">Entrega</div>
+          <h3>Organização que facilita a família</h3>
+          <p>Seleção criteriosa, tratamento com identidade e entrega organizada para compartilhar e guardar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Como funciona</h2>
+        <p>Processo simples, sem ruído. Você sabe o que esperar — e recebe exatamente isso.</p>
+      </div>
+
+      <div class="cols">
+        <div class="feature">
+          <div class="kicker">01</div>
+          <h3>Você me chama</h3>
+          <p>Me envie <strong>data</strong>, <strong>cidade</strong> e (se puder) <strong>igreja</strong>. Eu retorno com pacotes e disponibilidade.</p>
+        </div>
+
+        <div class="feature">
+          <div class="kicker">02</div>
+          <h3>No dia, eu cuido do registro</h3>
+          <p>Chego antes, leio o ambiente e registro a cerimônia com discrição + fotos com família após o rito.</p>
+        </div>
+
+        <div class="feature">
+          <div class="kicker">03</div>
+          <h3>Você recebe a entrega</h3>
+          <p>Seleção e tratamento profissional, com entrega organizada para a família reviver e compartilhar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Portfólio</h2>
+        <p>Substitua os blocos abaixo por suas fotos (6 a 12 imagens fortes). Priorize água, detalhes, emoção dos pais/padrinhos e foto de família.</p>
+      </div>
+
+      <div class="gallery">
+        <div class="ph big span-8"></div>
+        <div class="ph big span-4"></div>
+        <div class="ph span-4"></div>
+        <div class="ph span-4"></div>
+        <div class="ph span-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="pacotes">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Pacotes</h2>
+        <p>Modelo para você ajustar. Em landing premium, o ideal é apresentar 3 níveis claros e conversar no WhatsApp para fechar.</p>
+      </div>
+
+      <div class="plans">
+        <div class="plan">
+          <h3>Essencial</h3>
+          <p class="desc">Registro direto do que importa.</p>
+          <ul>
+            <li>Cobertura da cerimônia</li>
+            <li>Fotos com pais e padrinhos</li>
+            <li>Entrega digital organizada</li>
+          </ul>
+          <div class="cta">
+            <a class="btn btn-secondary" href="#contato">Ver disponibilidade</a>
+          </div>
+        </div>
+
+        <div class="plan pop">
+          <div class="tag">Mais pedido</div>
+          <h3>Premium</h3>
+          <p class="desc">Equilíbrio perfeito entre cerimônia, família e detalhes.</p>
+          <ul>
+            <li>Cobertura completa + detalhes</li>
+            <li>Retratos de família (organizados e rápidos)</li>
+            <li>Tratamento com identidade Vitarelli</li>
+            <li>Entrega digital premium</li>
+          </ul>
+          <div class="cta">
+            <a class="btn" id="ctaPlan" href="#" target="_blank" rel="noopener">Orçamento no WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="plan">
+          <h3>Completo</h3>
+          <p class="desc">Para quem quer a história inteira.</p>
+          <ul>
+            <li>Antes + cerimônia + pós (família)</li>
+            <li>Mais tempo e variedade de fotos</li>
+            <li>Entrega completa e organizada</li>
+          </ul>
+          <div class="cta">
+            <a class="btn btn-secondary" href="#contato">Montar meu pacote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Perguntas frequentes</h2>
+        <p>Respostas objetivas. Sem enrolação.</p>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Você fotografa sem atrapalhar a cerimônia?</summary>
+          <p>Sim. Meu foco é discrição. Eu me posiciono de forma estratégica e registro o essencial com respeito ao rito.</p>
+        </details>
+
+        <details>
+          <summary>O que você costuma registrar?</summary>
+          <p>Rito principal (água/unção), pais e padrinhos, família, detalhes (vela, roupa, símbolos) e fotos de família após a cerimônia.</p>
+        </details>
+
+        <details>
+          <summary>Em quanto tempo é a entrega?</summary>
+          <p>Eu informo o prazo no orçamento conforme a agenda e o pacote. A entrega é organizada e tratada com padrão profissional.</p>
+        </details>
+
+        <details>
+          <summary>Você atende fora de Belo Vale?</summary>
+          <p>Sim. Atendo Belo Vale e região: Moeda, Piedade dos Gerais, Bonfim, Nova Lima (Jardim Canadá e Alphaville), Congonhas e Conselheiro Lafaiete.</p>
+        </details>
+
+        <details>
+          <summary>Como reservo a data?</summary>
+          <p>Me chame no WhatsApp com <strong>data + cidade + igreja</strong>. Eu retorno com pacotes e disponibilidade.</p>
+        </details>
+
+        <details>
+          <summary>Posso pedir um pacote sob medida?</summary>
+          <p>Claro. Me diga o que é prioridade (mais família, mais detalhes, antes/depois) e eu monto a melhor opção.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contato">
+    <div class="wrap">
+      <div class="card">
+        <div class="card-pad" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center;">
+          <div>
+            <h2 style="margin:0 0 6px; font-size:22px;">Quer um registro premium do batizado?</h2>
+            <p style="margin:0; color:var(--muted); font-size:14px;">
+              Me chame no WhatsApp e envie a palavra <strong>BATIZADO</strong>.
+              Eu respondo com pacotes e datas disponíveis.
+            </p>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" id="ctaBottom" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/vitarellifotografia" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Vitarelli Fotografia</strong> • José Vitarelli Júnior • Belo Vale/MG e região
+      </div>
+      <div>
+        WhatsApp: <a id="waText" href="#" target="_blank" rel="noopener"><strong>(31) 98800-8600</strong></a> •
+        Instagram: <a href="https://www.instagram.com/vitarellifotografia" target="_blank" rel="noopener"><strong>@vitarellifotografia</strong></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ====== CONFIG ======
+    const WHATSAPP_NUMBER = "5531988008600"; // 55 + DDD + número (sem traços)
+    const DEFAULT_MESSAGE = "BATIZADO%0A%0AOi, José! Quero orçamento para fotografia de batizado.%0AData:%20%5Bpreencher%5D%0ACidade:%20%5Bpreencher%5D%0AIgreja/Local:%20%5Bpreencher%5D";
+
+    function waLink(messageEncoded){
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${messageEncoded}`;
+    }
+
+    // Apply WhatsApp links to CTAs
+    const ctas = ["ctaTop","ctaHero","ctaPlan","ctaBottom","waText"];
+    ctas.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = waLink(DEFAULT_MESSAGE);
+    });
+
+    function encode(s){
+      return encodeURIComponent(s).replace(/%20/g, "%20");
+    }
+
+    // Form -> WhatsApp
+    function sendWhatsAppLead(e){
+      e.preventDefault();
+      const data = document.getElementById("data").value;
+      const cidade = document.getElementById("cidade").value;
+      const igreja = document.getElementById("igreja").value || "-";
+      const msg = document.getElementById("msg").value || "-";
+
+      const text =
+        `BATIZADO\n\nOi, José! Quero orçamento para fotografia de batizado.\n` +
+        `Data: ${data}\nCidade: ${cidade}\nIgreja/Local: ${igreja}\nObs: ${msg}`;
+
+      window.open(waLink(encode(text)), "_blank");
+      return false;
+    }
+  </script>
+</body>
+</html>
